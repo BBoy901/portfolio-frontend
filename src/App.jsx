@@ -1,56 +1,51 @@
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
+
+  const [profile, setProfile] = useState(null)
+
+  useEffect(() => {
+
+    fetch('https://portfolio-backend-c2y7.onrender.com')
+      .then((response) => response.json())
+      .then((data) => setProfile(data))
+
+  }, [])
+
+  if (!profile) {
+    return <h1>Loading...</h1>
+  }
+
   return (
     <div className="container">
 
-      <h1>Fadhila Portfolio Website</h1>
+      <h1>{profile.name}</h1>
 
       <section>
-        <h2>Personal Profile</h2>
+        <h2>Role</h2>
 
-        <p>
-          I am a Data Science student interested in
-          Data Analysis, AI, Cloud Computing,
-          and Web Development.
-        </p>
+        <p>{profile.role}</p>
       </section>
 
       <section>
         <h2>Skills</h2>
 
         <ul>
-          <li>Python</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>SQL</li>
-          <li>Cloud Hosting</li>
+          {profile.skills.map((skill, index) => (
+            <li key={index}>{skill}</li>
+          ))}
         </ul>
-      </section>
-
-      <section>
-        <h2>Qualifications</h2>
-
-        <p>
-          Bachelor of Data Science
-        </p>
       </section>
 
       <section>
         <h2>Projects</h2>
 
         <ul>
-          <li>Skin Disease Detection System</li>
-          <li>Portfolio Website</li>
-          <li>Data Analysis Dashboard</li>
+          {profile.projects.map((project, index) => (
+            <li key={index}>{project}</li>
+          ))}
         </ul>
-      </section>
-
-      <section>
-        <h2>Contact Information</h2>
-
-        <p>Email: yourname@gmail.com</p>
-        <p>Phone: +255 XXX XXX XXX</p>
       </section>
 
     </div>
