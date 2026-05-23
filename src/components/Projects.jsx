@@ -53,6 +53,7 @@ function Projects() {
               overflow-hidden
               hover:-translate-y-3
               hover:border-purple-500
+              hover:shadow-[0_0_40px_rgba(168,85,247,0.25)]
               transition-all
               duration-300
               group
