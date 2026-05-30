@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import profile from '../assets/me.jpg'
 
 function Hero() {
 
@@ -6,16 +7,39 @@ function Hero() {
 
     <section
       id="home"
-      className="max-w-7xl mx-auto px-6 pt-32 pb-20"
+      className="
+        max-w-7xl
+        mx-auto
+        px-6
+        pt-24
+        pb-20
+        min-h-screen
+        flex
+        items-center
+      "
     >
 
-      <div className="grid md:grid-cols-2 gap-10 items-center">
+      <div className="
+        grid
+        md:grid-cols-2
+        gap-16
+        items-center
+        relative
+        z-10
+      ">
 
         {/* LEFT SIDE */}
+
         <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{
+                opacity: 1,
+                scale: 1,
+                y: [0, -15, 0]
+            }}
+            transition={{
+                duration: 2,
+            }}
         >
 
           <p className="text-purple-400 text-lg mb-4">
@@ -25,10 +49,34 @@ function Hero() {
           <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
 
             Fadhila
+            <a
+              href="/Fadhila_Mnyoloka_CV.pdf"
+              download
+              className="
+                inline-block
+                bg-purple-600
+                hover:bg-purple-700
+                px-8
+                py-4
+                rounded-xl
+                font-semibold
+                mt-6
+              "
+            >
+              Download CV
+            </a>
+
             <br />
 
-            <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              Data Scientist
+            <span className="
+                bg-gradient-to-r
+                from-purple-400
+                to-blue-400
+                bg-clip-text
+                text-transparent
+                animate-pulse
+            ">
+                Data Scientist
             </span>
 
           </h1>
@@ -86,8 +134,10 @@ function Hero() {
 
           <div className="
             relative
-            w-[350px]
-            h-[350px]
+            w-[280px]
+            h-[280px]
+            md:w-[350px]
+            md:h-[350px]
             rounded-full
             bg-gradient-to-br
             from-purple-500
@@ -109,15 +159,16 @@ function Hero() {
             ">
 
               <div>
-
-                <h2 className="text-3xl font-bold text-purple-400 mb-3">
-                  AI • Cloud • Data
-                </h2>
-
-                <p className="text-gray-400">
-                  Building modern intelligent systems.
-                </p>
-
+                <img
+                src={profile}
+                alt="profile"
+                className="
+                w-full
+                h-full
+                object-cover
+                rounded-full
+                "
+                />
               </div>
 
             </div>

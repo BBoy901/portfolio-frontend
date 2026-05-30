@@ -2,13 +2,15 @@ function Skills() {
 
   const skills = [
     "Python",
-    "React",
-    "JavaScript",
     "SQL",
+    "Power BI",
     "Machine Learning",
-    "Cloud Hosting",
+    "Data Analysis",
+    "React",
     "Node.js",
-    "Data Analysis"
+    "Git",
+    "GitHub",
+    "Cloud Deployment"
   ]
 
   return (

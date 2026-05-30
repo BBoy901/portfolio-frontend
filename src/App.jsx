@@ -5,7 +5,8 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
-
+import Timeline from './components/Timeline'
+import About from "./components/About";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       bg-purple-600/30
       rounded-full
       blur-[120px]
+      - z-10
     "></div>
 
     <div className="
@@ -34,10 +36,26 @@ function App() {
       bg-blue-600/30
       rounded-full
       blur-[120px]
+      - z-10
+    "></div>
+
+    <div className="
+      fixed
+      w-[500px]
+      h-[500px]
+      bg-purple-500/10
+      rounded-full
+      blur-[120px]
+      pointer-events-none
+      top-1/3
+      left-1/3
+      - z-10
     "></div>
 
     <Hero />
+    <about />
     <Stats />
+    <Timeline />
     <Skills />
     <Projects />
     <Contact />
